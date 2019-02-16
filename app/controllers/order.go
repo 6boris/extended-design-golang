@@ -4,9 +4,11 @@ import (
 	"extended-design-golang/app/services"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"runtime"
 )
 
 func GetAllOrders(c *gin.Context) {
+	runtime.GOMAXPROCS(8)
 	orders := services.GetAllOrders()
 
 	c.JSON(http.StatusOK, gin.H{

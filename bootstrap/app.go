@@ -1,4 +1,4 @@
-package boostrap
+package bootstrap
 
 import (
 	"extended-design-golang/app/routes"

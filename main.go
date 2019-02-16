@@ -1,11 +1,11 @@
 package main
 
 import (
-	"extended-design-golang/app/boostrap"
+	"extended-design-golang/bootstrap"
 )
 
 func main() {
-	app := boostrap.GetApp()
+	app := bootstrap.GetApp()
 	app.ListenAndServe()
 
 }
