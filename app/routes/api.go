@@ -12,6 +12,7 @@ func SetupRouter(app *gin.Engine) *gin.Engine {
 	app.POST("orders", controllers.CreateOrder)
 
 	app.GET("pay_maps", controllers.GetAllPayMaps)
+	app.GET("pay_info/:order_num", controllers.GetPayInfo)
 
 	return app
 }

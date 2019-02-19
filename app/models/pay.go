@@ -22,3 +22,10 @@ type PayMethod struct {
 	TypeCode        string `json:"type_code"`
 	TypeDescription string `json:"type_description"`
 }
+
+type PayInfo struct {
+	OrderNum  int       `json:"order_num"`
+	UserId    int       `json:"user_id"`
+	Account   int       `json:"account"`
+	PayMethod PayMethod `json:"pay_method"`
+}

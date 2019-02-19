@@ -15,3 +15,14 @@ func GetAllPayMaps(c *gin.Context) {
 		"pay_maps2": pay_maps2,
 	})
 }
+
+func GetPayInfo(c *gin.Context) {
+	order_num := c.Param("order_num")
+
+	pay_info := services.GetPayInfo(order_num)
+
+	c.JSON(200, gin.H{
+		"pay_info": pay_info,
+	})
+
+}

@@ -1,11 +1,7 @@
-package pay_channel
-
-import (
-	"extended-design-golang/app/services/pay"
-)
+package pay
 
 type PayChannelXinBeiPay struct {
-	pay.PayChannelInterface
+	PayChannelInterface
 }
 
 func (self PayChannelXinBeiPay) GetPayInstance() {

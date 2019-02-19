@@ -2,7 +2,22 @@ package services
 
 import (
 	"extended-design-golang/app/models"
+	"extended-design-golang/app/services/pay"
 )
+
+func GetPayInfo(order_num string) string {
+	order := GetOneOrder(order_num)
+	pay_info := models.PayInfo{}
+	channel := models.PayChannel{}
+	channel.Id = order.PayChannelId
+	db.Table("pay_channels").Find(&channel)
+
+	pay_info.PayMethod.ChannelCode = channel.Code
+
+	//return string(util.JsonMarshal(channel))
+
+	return pay.GetPayChannel(pay_info)
+}
 
 //	获取支付方式 MAP
 //	1.查询所有channel

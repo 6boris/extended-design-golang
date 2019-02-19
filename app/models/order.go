@@ -18,3 +18,16 @@ type Order struct {
 func (self Order) TableName() string {
 	return "orders"
 }
+
+type OrderInfo struct {
+	OrderNum      string  `json:"order_num"`
+	Account       float64 `json:"account"`
+	PayTypeCode   string  `json:"pay_type_code"`
+	PayTypeName   string  `json:"pay_type_name"`
+	PayMethodCode string  `json:"pay_method_code"`
+	PayMethodName string  `json:"pay_method_name"`
+
+	Created_at  *time.Time `json:"created_at"`
+	Updated_at  *time.Time `json:"updated_at"`
+	Finished_at *time.Time `json:"finished_at"`
+}
